@@ -4,29 +4,33 @@ using UnityEngine;
 
 public class Audio : MonoBehaviour
 {   
-    private AudioSource audio;
+    private AudioSource aud;
 
-    public AudioClip audiodeath;
-    public AudioClip audiofinish;
+    public AudioClip auddeath;
+    public AudioClip audfinish;
+    public AudioClip jumping;
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
+        aud = GetComponent<AudioSource>();
     }
     private void Update()
     {
-
+        if (Player.grounded == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            aud.PlayOneShot(jumping);
+        }
     }
 
         void OnTriggerEnter2D(Collider2D other)
     {
         if (this.CompareTag("Player") && other.CompareTag("Finish"))
         {
-            audio.PlayOneShot(audiofinish);
-        }
+            aud.PlayOneShot(audfinish);
+        }   
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
         {
-            audio.PlayOneShot(audiodeath);
+            aud.PlayOneShot(auddeath);
         }
     }
 

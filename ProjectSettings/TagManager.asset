@@ -8,6 +8,7 @@ TagManager:
   - Menu
   - SelectLevel
   - Hide
+  - CamTrigg
   layers:
   - Default
   - TransparentFX

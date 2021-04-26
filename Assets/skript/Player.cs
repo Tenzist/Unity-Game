@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool faceR = true;
 
-    private bool grounded;
+    public static bool grounded;
     public Transform feetpos;
     public float checkR;
     public LayerMask ground;
@@ -19,14 +19,13 @@ public class Player : MonoBehaviour
     public GameObject Deathscreen;
     private bool death = false;
     private Animator anim;
-    private AudioSource audio;
     public AudioClip audiojump;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
     }
     void Flip()
     {
@@ -75,7 +74,6 @@ public class Player : MonoBehaviour
         {
                 rb.velocity = Vector2.up * jumpForce;
                 anim.SetTrigger("is jump");
-                audio.PlayOneShot(audiojump);
         }
         if (death == true)
         {
@@ -131,5 +129,6 @@ public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 
 }
