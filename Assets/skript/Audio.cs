@@ -9,7 +9,8 @@ public class Audio : MonoBehaviour
     public AudioClip auddeath;
     public AudioClip audfinish;
     public AudioClip jumping;
-
+    public float dethvol = 0.3f;
+ 
     private void Start()
     {
         aud = GetComponent<AudioSource>();
@@ -31,6 +32,7 @@ public class Audio : MonoBehaviour
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
         {
             aud.PlayOneShot(auddeath);
+            aud.volume = dethvol;
         }
     }
 

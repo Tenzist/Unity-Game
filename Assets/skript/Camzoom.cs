@@ -5,6 +5,7 @@ using UnityEngine;
 public class Camzoom : MonoBehaviour
 {
     public float zoom;
+    public CinemachineCameraOffset vcam;
 
     void Start()
     {
@@ -15,9 +16,8 @@ public class Camzoom : MonoBehaviour
 
         if (this.CompareTag("Player") && other.CompareTag("CamTrigg"))
         {
-           // Camera.sensorSize = zoom;
-            Debug.Log("asd  ") ;
-            zoom = zoom * 2;
+           // vcam.m_Lens.OrthographicSize = 15f;
+
         }
     }
 }
