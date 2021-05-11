@@ -17,10 +17,11 @@ public class Audio : MonoBehaviour
     }
     private void Update()
     {
+        if (Time.timeScale >= 0.5) { 
         if (Player.grounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             aud.PlayOneShot(jumping);
-        }
+        }}
     }
 
         void OnTriggerEnter2D(Collider2D other)
