@@ -10,6 +10,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject Pausemenu;
 
 
+
+    public void Start()
+    {
+
+
+    }
+ 
+
     public void Select(string levelName)
     {
         SceneManager.LoadScene(levelName);
@@ -31,12 +39,13 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("Menu");
-        Debug.Log("Menu");
     }
  
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (Input.GetKeyDown(KeyCode.Escape) && sceneName != "Menu")
         {
             if (GamePause)
             {
@@ -47,6 +56,17 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+    }
+    public void Quit()
+    {
+        Debug.Log("Выход...");
+        Application.Quit();
+    }
+
+    public static int lvlNum = 1;
+    public void Play()
+    {
+        SceneManager.LoadScene("lvl" + lvlNum.ToString());
     }
 
 }

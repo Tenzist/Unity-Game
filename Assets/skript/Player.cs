@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     public GameObject Deathscreen;
     private bool death = false;
     private Animator anim;
-    public AudioClip audiojump;
 
     void Start()
     {
@@ -96,7 +95,8 @@ public class Player : MonoBehaviour
     {
         if (this.CompareTag("Player") && other.CompareTag("Finish"))
         {
-            Invoke("NextLevel", 3f);
+            NextLevel();
+            //Invoke("NextLevel", 3f);
 
         }
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
@@ -111,22 +111,14 @@ public class Player : MonoBehaviour
         Time.timeScale = 0.05f;
         Invoke("Restart", 0.5f);
     }
-public void Play()
-    {
-        SceneManager.LoadScene("lvl1");
-    }
 
-    public void Quit()
-    {
-        Debug.Log("Выход...");
-        Application.Quit();
-    }
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void NextLevel()
     {
+        PauseMenu.lvlNum++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
