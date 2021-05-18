@@ -18,11 +18,13 @@ public class Player : MonoBehaviour
  
     public GameObject Deathscreen;
     private bool death = false;
-    private Animator anim;
+    public static Animator anim;
+    public static CinemachineCameraOffset camzoom;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        camzoom = GetComponent<CinemachineCameraOffset>();
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -73,6 +75,7 @@ public class Player : MonoBehaviour
         {
                 rb.velocity = Vector2.up * jumpForce;
                 anim.SetTrigger("is jump");
+                
         }
         if (death == true)
         {

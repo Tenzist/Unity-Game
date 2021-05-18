@@ -695,6 +695,9 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/hard/hard/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.quicksearch">
+      <HintPath>D:/hard/hard/Library/ScriptAssemblies/com.unity.quicksearch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
