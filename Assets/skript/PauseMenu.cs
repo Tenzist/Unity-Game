@@ -13,8 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Start()
     {
-
-
+        Time.timeScale = 1f;
     }
  
 
@@ -29,14 +28,13 @@ public class PauseMenu : MonoBehaviour
         Pausemenu.SetActive(false);
         Time.timeScale = 1f;
         GamePause = false;
-
     }
     public void Pause()
     {
-        Pausemenu.SetActive(true);  
+        Pausemenu.SetActive(true);
         Time.timeScale = 0f;
         GamePause = true;
-
+        Audio.aud.Stop();
     }
     public void Menu()
     {

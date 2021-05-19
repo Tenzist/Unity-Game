@@ -77,13 +77,6 @@ public class Player : MonoBehaviour
                 anim.SetTrigger("is jump");
                 
         }
-        if (death == true)
-        {
-            if (Input.anyKey)
-            {
-                Restart();
-            }
-        }
         if(grounded == true)
         {
             anim.SetBool("is jump", false);
@@ -91,6 +84,13 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("is jump", true);
+        }
+        if (death == true)
+        {
+            if (Input.anyKey)
+            {
+                Restart();
+            }
         }
     }
 
@@ -104,15 +104,18 @@ public class Player : MonoBehaviour
         }
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
         {
-            Deathscreen.SetActive(true);
-            Invoke("deathtrue", 0.5f);
+            Deathscreen.SetActive(true);    
+            Invoke("deathtrue", 1f);
+            anim.Play("dieanim");
         }
     }
     void deathtrue()
     {
         death = true;
         Time.timeScale = 0.05f;
-        Invoke("Restart", 0.5f);
+        Invoke("Restart", 0.6f);
+
+
     }
 
     public void Restart()

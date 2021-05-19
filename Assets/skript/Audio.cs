@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Audio : MonoBehaviour
 {   
-    private AudioSource aud;
+    public static AudioSource aud;
 
     public AudioClip auddeath;
     public float dethvol = 0.3f;
@@ -30,7 +30,7 @@ public class Audio : MonoBehaviour
     {
         if (this.CompareTag("Player") && other.CompareTag("Finish"))
         {
-            aud.PlayOneShot(audfinish);
+          //  aud.PlayOneShot(audfinish);
         }   
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
         {
