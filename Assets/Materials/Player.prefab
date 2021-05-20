@@ -60,7 +60,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6985690048958650918}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -58.2, y: -9.8, z: 5}
   m_LocalScale: {x: 0.70752937, y: 0.7075291, z: 3.1435273}
   m_Children:
@@ -170,12 +170,11 @@ MonoBehaviour:
   speed: 10
   jumpForce: 15
   feetpos: {fileID: 6985690047092453043}
-  checkR: 0.3
+  checkR: 0.36
   ground:
     serializedVersion: 2
     m_Bits: 512
   Deathscreen: {fileID: 0}
-  audiojump: {fileID: 8300000, guid: da79caf7ab087884fa89de0b4d7f300a, type: 3}
 --- !u!95 &6985690048348589766
 Animator:
   serializedVersion: 3
@@ -306,4 +305,4 @@ MonoBehaviour:
   auddeath: {fileID: 8300000, guid: a16c17b671b095d4bba3ab2993e3490c, type: 3}
   audfinish: {fileID: 8300000, guid: fd07b542fa942b54f91b10877966e94c, type: 3}
   jumping: {fileID: 8300000, guid: da79caf7ab087884fa89de0b4d7f300a, type: 3}
-  dethvol: 0.3
+  walking: {fileID: 8300000, guid: 1c5585cb8a9ac014bb30b4b1b31a6029, type: 3}

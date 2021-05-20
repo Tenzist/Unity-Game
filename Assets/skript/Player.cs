@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+
     public float speed;
     public float jumpForce;
-    float moveInput;
+    public static float moveInput;
     private Rigidbody2D rb;
     private bool faceR = true;
 
@@ -19,12 +20,11 @@ public class Player : MonoBehaviour
     public GameObject Deathscreen;
     private bool death = false;
     public static Animator anim;
-    public static CinemachineCameraOffset camzoom;
+
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        camzoom = GetComponent<CinemachineCameraOffset>();
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
