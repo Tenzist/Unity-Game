@@ -24,9 +24,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        Time.timeScale = 1f;
+        anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1f;
     }
     void Flip()
     {
@@ -99,9 +99,8 @@ public class Player : MonoBehaviour
     {
         if (this.CompareTag("Player") && other.CompareTag("Finish"))
         {
-            NextLevel();
-            //Invoke("NextLevel", 3f);
 
+            Invoke("NextLevel", 1f);
         }
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
         {
@@ -115,8 +114,6 @@ public class Player : MonoBehaviour
         death = true;
         Time.timeScale = 0.05f;
         Invoke("Restart", 0.6f);
-
-
     }
 
     public void Restart()
@@ -125,8 +122,8 @@ public class Player : MonoBehaviour
     }
     public void NextLevel()
     {
-        PauseMenu.lvlNum++;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Loading Next level");
+        // PauseMenu.lvlNum++;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 }

@@ -66,6 +66,10 @@ public class PauseMenu : MonoBehaviour
     public static int lvlNum = 1;
     public void Play()
     {
+        Invoke("play", 1f);
+    }
+    public void play()
+    {
         SceneManager.LoadScene("lvl" + lvlNum.ToString());
     }
 
