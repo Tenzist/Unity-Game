@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\skript\AnimFade.cs" />
     <Compile Include="Assets\skript\Audio.cs" />
     <Compile Include="Assets\skript\ParallaxBackground.cs" />
     <Compile Include="Assets\skript\ParallaxCamera.cs" />

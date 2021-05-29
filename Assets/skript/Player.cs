@@ -13,13 +13,17 @@ public class Player : MonoBehaviour
     private bool faceR = true;
 
     public static bool grounded;
+    public static bool movingobject;
     public Transform feetpos;
+    public Transform hands;
     public float checkR;
     public LayerMask ground;
+    public LayerMask wall;
  
     public GameObject Deathscreen;
     private bool death = false;
     public static Animator anim;
+    public static bool FadeAnim = false;
 
 
     void Start()
@@ -27,6 +31,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody2D>();
         Time.timeScale = 1f;
+
     }
     void Flip()
     {
@@ -61,6 +66,7 @@ public class Player : MonoBehaviour
         }
         if (moveInput == 0)
         {
+            anim.speed = 0f;
             anim.SetBool("is walk", false);
         }
         else
@@ -70,21 +76,21 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-
         grounded = Physics2D.OverlapCircle(feetpos.position, checkR, ground);
-        if (grounded == true && Input.GetKeyDown(KeyCode.Space))
         {
+            if (grounded == true && Input.GetKeyDown(KeyCode.Space))
+            {
                 rb.velocity = Vector2.up * jumpForce;
                 anim.SetTrigger("is jump");
-                
-        }
-        if(grounded == true)
-        {
-            anim.SetBool("is jump", false);
-        }
-        else
-        {
-            anim.SetBool("is jump", true);
+            }
+            if (grounded == true)
+            {
+                anim.SetBool("is jump", false);
+            }
+            else
+            {
+                anim.SetBool("is jump", true);
+            }
         }
         if (death == true)
         {
@@ -93,13 +99,24 @@ public class Player : MonoBehaviour
                 Restart();
             }
         }
+        movingobject = Physics2D.OverlapCircle(hands.position, checkR, ground);
+        {
+            if (movingobject == true && moveInput != 0f && grounded == true)
+            {
+                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+                {
+                        Moving();
+                }
+            }
+            else NotMoving();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (this.CompareTag("Player") && other.CompareTag("Finish"))
         {
-
+            FadeAnim = true;
             Invoke("NextLevel", 1f);
         }
         if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
@@ -108,6 +125,18 @@ public class Player : MonoBehaviour
             Invoke("deathtrue", 1f);
             anim.Play("dieanim");
         }
+    }
+    public void Moving()
+    {
+        Audio.aud.pitch = 0.4f;
+        anim.speed = 0.3f;
+        //Debug.Log("123");
+    }
+    public void NotMoving()
+    {
+        anim.speed = 1f;
+        Audio.aud.pitch = 1f;
+        //Debug.Log("321");
     }
     void deathtrue()
     {
@@ -123,7 +152,7 @@ public class Player : MonoBehaviour
     public void NextLevel()
     {
         Debug.Log("Loading Next level");
-        // PauseMenu.lvlNum++;
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PauseMenu.lvlNum++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

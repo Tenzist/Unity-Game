@@ -9,6 +9,7 @@ TagManager:
   - SelectLevel
   - Hide
   - CamTrigg
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Ground
   - Player
   - postproc
-  - 
+  - Wall
   - 
   - 
   - 

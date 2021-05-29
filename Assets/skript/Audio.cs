@@ -28,11 +28,10 @@ public class Audio : MonoBehaviour
             }
             if (Player.grounded == true && Player.moveInput != 0 && aud.isPlaying == false) 
             {
+                aud.PlayOneShot(walking);
                 aud.volume = Random.Range(0.8f, 1f);
                 aud.pitch = Random.Range(0.9f, 1.1f);
-                aud.PlayOneShot(walking);
-            }
-            
+            } 
         }
     }
 
