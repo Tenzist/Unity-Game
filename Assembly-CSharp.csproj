@@ -71,6 +71,7 @@
     <Compile Include="Assets\skript\ParallaxLayer.cs" />
     <Compile Include="Assets\skript\PauseMenu.cs" />
     <Compile Include="Assets\skript\Player.cs" />
+    <Compile Include="Assets\skript\PortalActivation.cs" />
     <Compile Include="Assets\skript\selector.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

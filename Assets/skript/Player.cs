@@ -25,13 +25,15 @@ public class Player : MonoBehaviour
     public static Animator anim;
     public static bool FadeAnim = false;
 
+ 
+
 
     void Start()
     {
         anim = GetComponent<Animator>();  
         rb = GetComponent<Rigidbody2D>();
         Time.timeScale = 1f;
-
+        FadeAnim = false;
     }
     void Flip()
     {
@@ -130,13 +132,11 @@ public class Player : MonoBehaviour
     {
         Audio.aud.pitch = 0.4f;
         anim.speed = 0.3f;
-        //Debug.Log("123");
     }
     public void NotMoving()
     {
         anim.speed = 1f;
         Audio.aud.pitch = 1f;
-        //Debug.Log("321");
     }
     void deathtrue()
     {

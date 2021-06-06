@@ -10,7 +10,6 @@ public class AnimFade : MonoBehaviour
         if(Player.FadeAnim == true)
         {
             GetComponent<Animator>().SetTrigger("end");
-          //  Debug.Log("123");
         }
     }
 }
