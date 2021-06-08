@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
     }
     public void NextLevel()
     {
-        Debug.Log("Loading Next level");
+        //Debug.Log("Loading Next level");
         PauseMenu.lvlNum++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

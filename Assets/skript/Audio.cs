@@ -11,6 +11,7 @@ public class Audio : MonoBehaviour
     public AudioClip audfinish;
     public AudioClip jumping;
     public AudioClip walking;
+    public AudioClip CrystalCollect;
     public GameObject AudioOff;
     public GameObject AudioOn;
 
@@ -60,8 +61,11 @@ public class Audio : MonoBehaviour
             aud.PlayOneShot(auddeath);
             aud.volume = 0.3f;
         }
+        if (this.CompareTag("Player") && other.CompareTag("crystal"))
+        {
+            aud.PlayOneShot(CrystalCollect);
+        }
     }
-
 
 
     public void audioOn()

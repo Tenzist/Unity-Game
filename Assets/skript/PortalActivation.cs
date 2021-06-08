@@ -5,8 +5,8 @@ using UnityEngine;
 public class PortalActivation : MonoBehaviour
 {
     public GameObject Crystalik;
-    public GameObject PortalOff;
     public GameObject PortalOn;
+    public GameObject PortalOff;
 
     void Start()
     {
