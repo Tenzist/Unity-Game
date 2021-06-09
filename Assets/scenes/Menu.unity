@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pausemenu: {fileID: 191076812}
+  CheatMenu: {fileID: 0}
 --- !u!1 &255287880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1180,7 @@ MonoBehaviour:
   audfinish: {fileID: 0}
   jumping: {fileID: 0}
   walking: {fileID: 0}
+  CrystalCollect: {fileID: 0}
   AudioOff: {fileID: 834010682}
   AudioOn: {fileID: 1604238929}
 --- !u!1 &805027393
@@ -1908,6 +1910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622535610}
   - component: {fileID: 1622535609}
+  - component: {fileID: 1622535611}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -2023,8 +2026,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622535611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622535608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db39eba694901e2438f1a684b8e18604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622917586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pausemenu: {fileID: 0}
+  CheatMenu: {fileID: 0}
 --- !u!95 &2024695232 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3948361048763658439, guid: d5c7182ea3d540a419ab6593fa887db7,
@@ -2945,7 +2961,7 @@ PrefabInstance:
     - target: {fileID: 3948361048763658424, guid: d5c7182ea3d540a419ab6593fa887db7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3948361048763658424, guid: d5c7182ea3d540a419ab6593fa887db7,
         type: 3}
@@ -3034,12 +3050,12 @@ PrefabInstance:
     - target: {fileID: 8000573759365074604, guid: 02329f6d0ae941341818a08700fe5e09,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.3446045
+      value: 1188
       objectReference: {fileID: 0}
     - target: {fileID: 8000573759365074604, guid: 02329f6d0ae941341818a08700fe5e09,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8198242
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8000573759365074604, guid: 02329f6d0ae941341818a08700fe5e09,
         type: 3}

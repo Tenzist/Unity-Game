@@ -7,21 +7,57 @@ public class PauseMenu : MonoBehaviour
 {
 
     public static bool GamePause = false;
+    public static bool cheat = false;
     public GameObject Pausemenu;
-
-
+    public GameObject CheatMenu;
 
     public void Start()
     {
         Time.timeScale = 1f;
     }
  
+    void Update()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (Input.GetKeyDown(KeyCode.Escape) && sceneName != "Menu" && cheat == false)
+        {
+            if (GamePause)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
 
+        if (Input.GetKeyDown(KeyCode.Insert) && sceneName != "Menu")
+        {
+            if (cheat == false)
+            {
+                chmenuOn();
+            }
+            else
+            {
+                chmenuOff();
+            }
+        }
+    }
     public void Select(string levelName)
     {
         SceneManager.LoadScene(levelName);
     }
-    
+    public void chmenuOn()
+    {
+        CheatMenu.SetActive(true);
+        cheat = true;
+    }
+    public void chmenuOff()
+    {
+        CheatMenu.SetActive(false);
+        cheat = false;
+    }
 
     public void Resume()
     {
@@ -40,23 +76,7 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
- 
-    void Update()
-    {
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-        if (Input.GetKeyDown(KeyCode.Escape) && sceneName != "Menu")
-        {
-            if (GamePause)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
-    }
+
     public void Quit()
     {
         Debug.Log("Выход...");

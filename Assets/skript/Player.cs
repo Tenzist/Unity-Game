@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -24,9 +25,6 @@ public class Player : MonoBehaviour
     private bool death = false;
     public static Animator anim;
     public static bool FadeAnim = false;
-
- 
-
 
     void Start()
     {
@@ -154,5 +152,18 @@ public class Player : MonoBehaviour
         //Debug.Log("Loading Next level");
         PauseMenu.lvlNum++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void superJump()
+    {
+       jumpForce = 25f;
+    }
+    public void superSpeed()
+    {
+        speed = 20f;
+    }
+    public void superOff()
+    {
+        speed = 10f;
+        jumpForce = 15f;
     }
 }
