@@ -119,9 +119,9 @@ public class Player : MonoBehaviour
             FadeAnim = true;
             Invoke("NextLevel", 1f);
         }
-        if (this.CompareTag("Player") && other.CompareTag("MapEnd"))
+        if (this.CompareTag("Player") && other.CompareTag("MapEnd") && death == false)
         {
-            Deathscreen.SetActive(true);    
+            Deathscreen.SetActive(true);
             Invoke("deathtrue", 1f);
             anim.Play("dieanim");
         }

@@ -13,5 +13,14 @@ EditorBuildSettings:
     guid: b452098d0ca2b904f8d0daec6052efff
   - enabled: 1
     path: Assets/scenes/lvl2.unity
-    guid: 821d3c48c348b55499b4f49773054e91
+    guid: a2fb97520bbd53d4a827b31177b2ef5a
+  - enabled: 1
+    path: Assets/scenes/lvl3.unity
+    guid: 369e67886143133439603abf7bb0642d
+  - enabled: 1
+    path: Assets/scenes/lvl4.unity
+    guid: 66f270db1921d904797aa5d61677ac7c
+  - enabled: 1
+    path: Assets/scenes/lvl7.unity
+    guid: 80a786ef7c39d2640a5067e72cd49462
   m_configObjects: {}

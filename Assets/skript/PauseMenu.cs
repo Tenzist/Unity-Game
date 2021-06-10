@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GamePause = false;
     public static bool cheat = false;
     public GameObject Pausemenu;
+    public static int lvlNum = 1;
     public GameObject CheatMenu;
 
     public void Start()
@@ -82,8 +83,6 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Выход...");
         Application.Quit();
     }
-
-    public static int lvlNum = 1;
     public void Play()
     {
         Invoke("play", 1f);

@@ -84,5 +84,6 @@ public class Audio : MonoBehaviour
             aud.volume = 0.01f;
         else
             aud.volume = 1f;
+
     }
 }
